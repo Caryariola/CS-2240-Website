@@ -1,8 +1,12 @@
-export default function card(props : any){
+export default function Card(props : any){
     return (
         <>
-        <div className="border-1 border-black w-100 h-40 rounded text-1xl text-center ">
-            {props.title}
+        <div className="border border-gray-300 w-45 h-80 p-2 rounded  text-center overflow-hidden ">
+            <img src={props.image} alt="Card Image" className="w-full h-2/3 object-cover rounded"/>
+            <div className="p-2">
+                <p className="text-xs font-bold text-left">{props.rank}. {props.title}</p>
+            </div>
+            
         </div>
         </>
     )
