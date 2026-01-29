@@ -101,9 +101,9 @@ export default function Home() {
           </div>
           ) : (<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {animeData.map((anime: any, index: number) => (
-            <CardBox image={anime.image} title={anime.title} type={anime.type} key={`${anime.mal_id}-${index}`} episodes={anime.episodes} score={anime.score} />
+            <CardBox image={anime.image} title={anime.title}  type={anime.type} key={`${anime.mal_id}-${index}`} episodes={anime.episodes} score={anime.score} malId={anime.mal_id} />
           ))}
-          </div>)}
+          </div>)}    
 
         </div>
       </div>
