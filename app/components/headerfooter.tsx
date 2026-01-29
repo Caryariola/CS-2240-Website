@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Header(props : any) {
     return (
         <>
-        <div className="sticky top-0 border-b border-t border-blue-500 bg-blue-500">
+        <div className="sticky top-0 border-b max-w-screen border-t border-blue-500 bg-blue-500">
             <div className="flex items-center">
                 <div >
                     <span className="text-2xl font-bold text-white p-4 items-center ">
