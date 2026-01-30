@@ -5,7 +5,7 @@
   --background-1: #1e3a8a;
   --foreground: #eaeaea;
   --bg-gradient: linear-gradient(to bottom, #1e3a8a 0px, #0f0f18 500px);
-  --image-fade: linear-gradient(to bottom, transparent 0px, var(--background) 300px);
+  --image-fade: linear-gradient(to bottom, transparent 0px, var(--background) 400px);
 }
 
 @theme inline {
@@ -26,12 +26,12 @@ body {
   
 
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center top;
 
   
 
   background-attachment: scroll;
-  background-size: 100% auto;
+  background-size: 150% auto;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
