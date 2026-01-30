@@ -5,7 +5,6 @@ import CardBox from "./components/card";
 import LoadingCard from "./components/laodingcard"; 
 import SearchBar from "./components/searchbar";
 
-
 interface AnimeData {
   rank: number;
   title: string;
