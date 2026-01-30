@@ -3,20 +3,24 @@ import Link from 'next/link';
 export default function Header(props : any) {
     return (
         <>
-        <div className="sticky top-0 border-b max-w-screen border-t border-blue-500 bg-blue-500">
+        <header className='sticky top-0 z-50 m-2 md:m-6'>
+            <div className=" max-w-screen p-2  rounded-2xl border backdrop-blur bg-black/20">
             <div className="flex items-center">
                 <div >
-                    <span className="text-2xl font-bold text-white p-4 items-center ">
-                        {props.name}
+                    <span className="text-lg sm:text-2xl font-bold text-white p-4 items-center ">
+                        <Link href="/">{props.name}</Link>
                     </span>
                 </div>
-                <nav className="ml-20 pt-1 pb-1 mt-1 mb-1">
-                    <Link className="align-middle p-2 mr-2 text-white rounded hover:bg-white hover:text-black" href="/">Home</Link>
-                    <Link className="align-middle p-2 mr-2 text-white rounded hover:bg-white hover:text-black" href="/about">About</Link>
-                    <Link className="align-middle p-2 mr-2 text-white rounded hover:bg-white hover:text-black" href="/contact">Contact</Link>
+                <nav className="flex ml-4 items-center gap-2 md:gap-5  md:ml-20">
+                    <Link className="whitespace-nowrap align-middle text-xs sm:text-base p-2  text-white rounded hover:bg-white hover:text-black transition-colors" href="/">Home</Link>
+                    <Link className="whitespace-nowrap align-middle text-xs sm:text-base p-2  text-white rounded hover:bg-white hover:text-black transition-colors" href="/about">About</Link>
+                    <Link className="whitespace-nowrap align-middle text-xs sm:text-base p-2 text-white rounded hover:bg-white hover:text-black transition-colors" href="/contact">Contact</Link>
                 </nav>
             </div>
         </div>
+
+        </header>
+        
         </>
     );
 }

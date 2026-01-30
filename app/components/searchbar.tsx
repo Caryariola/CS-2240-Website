@@ -1,7 +1,7 @@
 export default function SearchBar(props : any) {
     return(
         <>
-        <form onSubmit={props.handleSearch} className="flex p-2 items-center">
+        <form onSubmit={props.handleSearch} className="flex items-center">
                     <input
                       type="text"
                       value={props.searchText} onChange={(e) => props.setSearchText(e.target.value)}

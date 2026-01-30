@@ -11,8 +11,8 @@ export default function Card(props : any){
     return (
         <>
         <Link href={pageUrl}>
-            <div className=" border border-gray-300 w-full rounded-2xl  text-center overflow-hidden ">
-                <div className=" w-full aspect-2/3 relative overflow-hidden rounded-2xl ">
+            <div className=" backdrop-blur-2xl w-full rounded-2xl  text-center overflow-hidden ">
+                <div className=" w-full aspect-2/3  overflow-hidden rounded-2xl ">
                     <img src={props.image} alt={props.title} loading='lazy' className="w-full h-full object-cover"/>
                 </div>
                 <div className="p-2">

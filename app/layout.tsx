@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header name={"XIJIXJ!"}/>
+        <Header name={"AnimeHub"}/>
         {children}
       </body>
     </html>

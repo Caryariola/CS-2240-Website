@@ -81,17 +81,17 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col gap-4 border m-3.5 min-h-screen max-w-screen items-center bg-zinc-50 font-sans dark:bg-black p-10">
-      <div className="border"> 
+    <div className="flex flex-col gap-4 min-h-screen  max-w-screen items-center font-sans " >
+      <div className=""> 
         <h1 className="text-3xl font-medium p-2">Welcome</h1>
       </div>
 
-      <div className="flex flex-col  gap-4 max-w-270 p-2 border"> 
-        <div className="flex flex-wrap justify-start gap-2 p-2 border">
+      <div className="flex flex-col  gap-4 max-w-270 w-full min-h-screen "> 
+        <div className="flex flex-wrap justify-start rounded-2xl gap-2 p-3 border">
           <SearchBar searchText={searchText} setSearchText={setSearchText} handleSearch={handleSearch} />
         </div>
 
-        <div className="w-full max-w-7xl  mx-auto  p-2 border">
+        <div className="w-full max-w-7xl  mx-auto rounded-2xl p-3 border bg-black/10">
           {isLoading ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {[...Array(10)].map((_, index) => (
@@ -111,7 +111,7 @@ export default function Home() {
         <button 
             onClick={() => setPage(prev => Math.max(prev - 1, 1))}
             disabled={page === 1}
-            className={`px-4 py-2 rounded bg-gray-200 text-gray-800 ${page === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-300'}`}
+            className={`px-4 py-2 rounded bg-gray-200 text-gray-800 ${page === 1 ? 'opacity-50 ' : 'hover:bg-gray-300'}`}
         >
             Previous
         </button>
