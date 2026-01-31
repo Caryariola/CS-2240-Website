@@ -73,8 +73,8 @@ export default function Home() {
           <SearchBar searchText={searchText} setSearchText={setSearchText} handleSearch={handleSearch} />
         </div>
 
-        <AnimeGrid animedata={animeData} isLoading={isLoading} title={dynamicTitle(searchText)} limit={5} />
-        {searchText.length === 0 && <><AnimeGrid animedata={alltimepopularanime} isLoading={isLoading} title="All Time Popular Anime" limit={5} /></>}
+        <AnimeGrid animedata={animeData} isLoading={isLoading} title={dynamicTitle(searchText)} search={searchText} />
+        {searchText.length === 0 && <><AnimeGrid animedata={alltimepopularanime} search={searchText} isLoading={isLoading} title="All Time Popular Anime"/></>}
       </div>
 
       {/* <div className="flex  justify-center items-center gap-4 mt-8 mb-8">
