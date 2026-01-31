@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0f18;
+  --background: #0d0e21;
   --background-1: #1e3a8a;
   --foreground: #eaeaea;
   --bg-gradient: linear-gradient(to bottom, #1e3a8a 0px, #0f0f18 500px);
@@ -20,18 +20,17 @@
 
 body {
   
-  background-color: var(--background);
+  
   background-image: var(--image-fade) , var(--dynamic-bg) ;
-
+  background-color: var(--background);
   
 
   background-repeat: no-repeat;
-  background-position: center top;
-
+  background-position: top center;
   
 
   background-attachment: scroll;
-  background-size: 150% auto;
+  background-size: 130% auto;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
