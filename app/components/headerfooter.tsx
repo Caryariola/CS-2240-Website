@@ -28,7 +28,7 @@ export default function Header(props : any) {
 export function Footer() {
     return (
         <footer className="w-full mt-8 p-4 border-t text-center text-sm text-gray-500">
-            <p>© {new Date().getFullYear()} AnimeInfo. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} AnimeHub. All rights reserved.</p>
         </footer>
     );
 }

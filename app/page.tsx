@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { AnimeData, dynamicTitle, fetchData, fetchTopPopular } from "@/lib/animeServices";
+import { getAnilistBanner, PageProps } from "@/lib/anilistServices";
 import SearchBar from "./components/searchbar";
 import AnimeGrid from "./components/animegrid";
+import HomepagePhoto from "./components/homepagephoto";
 
 
 export default function Home() {
@@ -13,15 +15,20 @@ export default function Home() {
   const [searchText, setSearchText] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [anilistBanner, setAnilistBanner] = useState<string | null>(null);
 
   useEffect(() => {
     const loadData = async () => {
       setIsLoading(true);
       try {
         // 1. Fetch Seasonal or Search results
-        const data = await fetchData(searchText, page);
+        const [data, anilistBanner] = await Promise.all([
+          fetchData(searchText, page),
+          getAnilistBanner(page === 1 ? "57555" : "12345") // Example MAL IDs for testing
+        ]);
         setAnimeData(data.topAnime);
         setHeaderTitle(data.title);
+        setAnilistBanner(anilistBanner);
 
         // 2. Fetch Popular only if we don't have it and aren't searching
         if (alltimepopularanime.length === 0 && searchText === "") {
@@ -38,7 +45,8 @@ export default function Home() {
     };
 
     loadData();
-  }, [page, searchText]); // Removed the separate mount effect
+  }, [page, searchText]);
+   // Removed the separate mount effect
   
   const handleSearch = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -56,11 +64,11 @@ export default function Home() {
     <>
     
     <div className="flex flex-col gap-4 min-h-screen  max-w-screen items-center font-sans " >
-      <div className=""> 
-        <h1 className="text-3xl font-medium p-2">Welcome</h1>
-      </div>
+      {/* <div className=" "> */}
+      <HomepagePhoto image={anilistBanner}/>
+      {/* </div> */}
 
-      <div className="flex flex-col  gap-2 max-w-270 w-full min-h-screen "> 
+      <div className="flex flex-col z-10 gap-2 max-w-270 w-full min-h-screen "> 
         <div className="flex flex-wrap justify-start rounded-2xl gap-2 p-3 border">
           <SearchBar searchText={searchText} setSearchText={setSearchText} handleSearch={handleSearch} />
         </div>
